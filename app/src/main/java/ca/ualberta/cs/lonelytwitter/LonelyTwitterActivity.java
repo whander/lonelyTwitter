@@ -23,9 +23,9 @@ public class LonelyTwitterActivity extends Activity {
 	private static final String FILENAME = "file.sav";
 	private EditText bodyText;
 	private ListView oldTweetsList;
+	private ArrayList<String> tweets = new ArrayList<String>();
+    private ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item, tweets);
 
-
-	//private ArrayList<String> tweets = new ArrayList<String>();
 	//private ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item, tweets);
 
 	/** Called when the activity is first created. */
@@ -41,12 +41,11 @@ public class LonelyTwitterActivity extends Activity {
 		saveButton.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
-				//setResult(RESULT_OK);
 				String text = bodyText.getText().toString();
-				//adapter.notifyDataSetChanged();
-				saveInFile(text, new Date(System.currentTimeMillis()));
-				//finish();
 
+				tweets.add(new Date().toString()+ " | " +text);
+				adapter.notifyDataSetChanged();
+				saveInFile(text, new Date(System.currentTimeMillis()));
 			}
 		});
 	}
@@ -55,12 +54,12 @@ public class LonelyTwitterActivity extends Activity {
 	protected void onStart() {
 		// TODO Auto-generated method stub
 		super.onStart();
-		String[] tweets = loadFromFile();
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item, tweets);
+		loadFromFile();
+		//String[] tweets = loadFromFile();
 		oldTweetsList.setAdapter(adapter);
 	}
 
-	private String[] loadFromFile() {
+	private void loadFromFile() {
 		ArrayList<String> tweets = new ArrayList<String>();
 		try {
 			FileInputStream fis = openFileInput(FILENAME);
@@ -78,7 +77,7 @@ public class LonelyTwitterActivity extends Activity {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return tweets.toArray(new String[tweets.size()]);
+		//return tweets.toArray(new String[tweets.size()]);
 	}
 	
 	private void saveInFile(String text, Date date) {
