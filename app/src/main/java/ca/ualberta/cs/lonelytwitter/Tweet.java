@@ -11,9 +11,10 @@ public abstract class Tweet {
     protected ArrayList<Mood> moods = new ArrayList<Mood>();
 
 
+
     public Tweet(String message){
         this.message=message;
-        this.date = new Date();
+        this.date = new Date(System.currentTimeMillis());
     }
 
     public Tweet(String message, Date date){
@@ -50,5 +51,9 @@ public abstract class Tweet {
     }
 
     public abstract boolean isImportant();
+
+    public String toString(){
+        return (this.date.toString() + " | " + this.message);
+    }
 
 }
