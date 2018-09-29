@@ -1,8 +1,8 @@
-apply plugin: 'com.android.application'
+/*apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 18
-    buildToolsVersion "22.0.1"
+    buildToolsVersion '28.0.2'
 
     defaultConfig {
         applicationId "ca.ualberta.cs.lonelytwitter"
@@ -20,4 +20,36 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+}
+*/
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.2'
+
+    defaultConfig {
+        applicationId "ca.ualberta.cs.lonelytwitter"
+        minSdkVersion 18
+        targetSdkVersion 28
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_5
+            targetCompatibility JavaVersion.VERSION_1_5
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.t' +
+                    'xt'), 'proguard-rules.txt'
+        }
+    }
+
+}
+
+dependencies {
+    //// classpath 'com.android.tools.build:gradle:3.2.0'
+    implementation 'com.google.code.gson:gson:2.2.4'
 }

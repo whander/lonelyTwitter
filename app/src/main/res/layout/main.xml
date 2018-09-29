@@ -19,28 +19,16 @@
 
     </ListView>
 
-    <TextView
-        android:id="@+id/hello"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/hello" />
-    
-    <EditText
-        android:id="@+id/body"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="horizontal" />
-
     <Button
-        android:id="@+id/clear"
+        android:id="@+id/edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/clear" />
+        android:text="@string/edit" />
 
     <Button
-        android:id="@+id/save"
-        android:layout_width="fill_parent"
+        android:id="@+id/delete2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/save" />
+        android:text="@string/delete" />
 
 </LinearLayout>

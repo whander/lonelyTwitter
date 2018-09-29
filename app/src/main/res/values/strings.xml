@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Joshua said:</string>
-    <string name="app_name">LonelyTwitter</string>
+    <string name="hello">Enter text here:</string>
+    <string name="app_name">whanders-FeelsBook</string>
     <string name="save">Save</string>
-    <string name="clear">Clear</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
     
 </resources>
