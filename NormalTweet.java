@@ -2,15 +2,12 @@ package ca.ualberta.cs.lonelytwitter;
 
 public class NormalTweet extends Tweet {
 
-    public NormalTweet(String message){
+    public NormalTweet(String message) {
         super(message);
     }
 
-
     @Override
-    public boolean isImportant(){
-        return false;
-
+    public Boolean isImportant() {
+        return Boolean.FALSE;
     }
-
-}//end class
+}
